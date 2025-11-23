@@ -1,0 +1,9 @@
+apiVersion: v2
+name: nginx
+description: Prosty serwer Nginx jako test GitOps
+type: application
+version: 1.0.0
+dependencies:
+  - name: nginx
+    version: "15.5.0"
+    repository: https://charts.bitnami.com/bitnami
