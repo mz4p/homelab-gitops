@@ -3,6 +3,8 @@ argo-cd:
   configs:
     params:
       server.insecure: true
+    cm:
+      account.admin: apiKey, login
 
   server:
     extraArgs:
