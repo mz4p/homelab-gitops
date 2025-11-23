@@ -5,3 +5,5 @@ nginx:
 
   ingress:
     enabled: false
+  nodeSelector:
+    kubernetes.io/arch: amd64
