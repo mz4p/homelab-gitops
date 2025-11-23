@@ -2,9 +2,8 @@ argo-cd:
   configs:
     params:
       server.insecure: true
+
   server:
-    service:
-      servicePort: 80
     ingress:
       enabled: true
       ingressClassName: traefik
