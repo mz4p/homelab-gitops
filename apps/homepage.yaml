@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: homepage
+  namespace: argocd
+  finalizers:
+    - resources-finilizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mz4p/homelab-gitops.git
+    targetRevision: main
+    path: charts/homepage
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

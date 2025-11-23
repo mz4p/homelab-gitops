@@ -1,0 +1,10 @@
+apiVersion: v2
+name: homepage
+description: My homelab dashboard
+type: applicatoin
+version: 1.0.0
+appVersion: "1.0.0"
+dependencies:
+  - name: homepage
+    version: 3.4.3
+    repository: https://jaweswynn.github.io/helm-charts
