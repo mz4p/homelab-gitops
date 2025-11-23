@@ -29,6 +29,6 @@ homepage:
     services:
       - Infrastructure:
           - ArgoCD:
-              icon: argocd.png
+              icon: https://raw.githubusercontent.com/homarr-labs/dashboard-icons/main/png/argo-cd.png
               href: "http://argocd.local"
               description: GitOps Controller
