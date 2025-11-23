@@ -51,7 +51,7 @@ homepage:
             icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/grafana.png
             href: "http://grafana.local"
             description: Graphs and Metrics
-            ping: http://monitoring-grafana.monitoring.svc.cluster.local:80
+            ping: http://monitoring-grafana.monitoring:80
             widget:
               type: kubernetes
               mode: cluster
