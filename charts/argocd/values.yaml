@@ -1,0 +1,12 @@
+argo-cd:
+  configs:
+    params:
+      server.insecure: true
+  server:
+    ingress:
+      enabled: true
+      ingressClassName: traefik
+      annotations:
+         traefik.ingress.kubernetes.io/router.entrypoints: web
+      hosts:
+        - argocd.local # Nasz żądany adres
