@@ -1,4 +1,8 @@
 homepage:
+  serviceAccount:
+    create: True
+  rbac:
+    create: True
   service:
     main:
       type: ClusterIP
@@ -25,6 +29,13 @@ homepage:
     settings:
       title: "K3s Homelab"
       headerStyle: clean
+      layout:
+        Infrastructure:
+          style: row
+          columns: 2
+        Monitoring:
+          style: row
+          columns: 2
     
     services:
       - Infrastructure:
@@ -32,3 +43,18 @@ homepage:
               icon: https://raw.githubusercontent.com/homarr-labs/dashboard-icons/main/png/argo-cd.png
               href: "http://argocd.local"
               description: GitOps Controller
+              widget:
+                type: argocd
+                url: http://argocd-gitops-server.argocd.svc.cluster.local
+      - Monitoring:
+        - Grafana:
+            icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/grafana.png
+            href: "http://grafana.local"
+            description: Graphs and Metrics
+            widget:
+              type: kubernetes
+              mode: cluster
+              show:
+                cpu: true
+                memory: true
+                storage: false
