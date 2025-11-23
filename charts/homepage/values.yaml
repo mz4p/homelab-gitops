@@ -16,18 +16,17 @@ homepage:
             description: GitOps Controller
   ingress:
     main:
-      enabled: true
-      ingressClassName: traefik
-      annotations:
-        traefik.ingress.kubernetes.io/router.entrypoints: web
-      hosts:
-        - hosts: homepage.local
-          paths:
-            - path: /
-              pathType: Prefix
-              service:
-                name: main
-                port: 3000
+     ingress:
+      main:
+        enabled: true
+        ingressClassName: traefik
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: web
+        hosts:
+          - host: homepage.local
+            paths:
+              - path: /
+                pathType: Prefix 
   env:
     - name: HOMEPAGE_ALLOWED_HOSTS
       value: "homepage.local,192.168.0.100,localhost"
