@@ -4,34 +4,31 @@ homepage:
       type: ClusterIP
       ports:
         http:
-          port: 3000
-  config:
-    title: "K3s Homelab"
-    headerStyle: clean
-    services:
-      - Infrastructure:
-        - ArgoCD:
-            icon: argocd
-            href: "https://argocd.local"
-            description: GitOps Controller
+          port: 80
+          targetPort: 3000
   ingress:
     main:
-     ingress:
-      main:
-        enabled: true
-        ingressClassName: traefik
-        annotations:
-          traefik.ingress.kubernetes.io/router.entrypoints: web
-        hosts:
-          - host: homepage.local
-            paths:
-              - path: /
-                pathType: Prefix 
-  env:
-    - name: HOMEPAGE_ALLOWED_HOSTS
-      value: "homepage.local,192.168.0.100,localhost"
+      enabled: true
+      ingressClassName: traefik
+      annotations:
+        traefik.ingress.kubernetes.io/router.entrypoints: web
       hosts:
         - host: homepage.local
           paths:
             - path: /
               pathType: Prefix
+  env:
+    - name: HOMEPAGE_ALLOWED_HOSTS
+      value: "homepage.local,192.168.0.100,localhost"
+
+  config:
+    settings:
+      title: "K3s Homelab"
+      headerStyle: clean
+    
+    services:
+      - Infrastructure:
+          - ArgoCD:
+              icon: argocd
+              href: "http://argocd.local"
+              description: GitOps Controller
