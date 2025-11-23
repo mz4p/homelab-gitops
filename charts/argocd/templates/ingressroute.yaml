@@ -1,8 +1,10 @@
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: argocd-server
+  name: argocd-server-route
   namespace: argocd
+  annotations:
+    traefik.ingress.kubernetes.io/service.serversscheme: http
 spec:
   entryPoints:
     - web
@@ -10,5 +12,5 @@ spec:
     - match: Host(`argocd.local`)
       kind: Rule
       services:
-        - name: argocd-server
+        - name: argocd-gitops-server
           port: 80

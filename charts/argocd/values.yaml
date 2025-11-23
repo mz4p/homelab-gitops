@@ -5,19 +5,10 @@ argo-cd:
       server.insecure: true
 
   server:
+    extraArgs:
+      - --insecure
+    
     host: argocd.local
     
     ingress:
       enabled: false
-
-    ingressRoute:
-      enabled: true
-      router:
-        entryPoints:
-          - web
-        tls: {}
-      annotations:
-        traefik.ingress.kubernetes.io/service.serversscheme: http
-        traefik.ingress.kubernetes.io/router.entrypoints: web
-      hosts:
-        - argocd.local
