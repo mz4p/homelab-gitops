@@ -2,14 +2,18 @@ argo-cd:
   configs:
     params:
       server.insecure: true
-
   server:
     host: argocd.local
     ingress:
+      enabled: false
+    ingressRoute:
       enabled: true
-      ingressClassName: traefik
+      router:
+        entryPoints:
+          - web
+        tls: {}
       annotations:
-        traefik.ingress.kubernetes.io/service.serversscheme: http
         traefik.ingress.kubernetes.io/router.entrypoints: web
+        traefik.ingress.kubernetes.io/service.serversscheme: http
       hosts:
         - argocd.local
