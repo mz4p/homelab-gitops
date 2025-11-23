@@ -20,6 +20,9 @@ homepage:
       ingressClassName: traefik
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: web
+  env:
+    - name: HOMEPAGE_ALLOWED_HOSTS
+      value: "homepage.local,192.168.0.100,localhost"
       hosts:
         - host: homepage.local
           paths:
