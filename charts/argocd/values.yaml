@@ -4,6 +4,7 @@ argo-cd:
       server.insecure: true
 
   server:
+    host: argocd.local
     ingress:
       enabled: true
       ingressClassName: traefik
