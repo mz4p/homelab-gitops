@@ -6,4 +6,4 @@ version: 1.0.0
 appVersion: "1.0.0"
 dependencies:
   - name: homepage
-    repository: https://jameswynn.github.io/helm-charts  <-- WRÓĆ DO TEGO ADRESU
+    repository: https://jameswynn.github.io/helm-charts
