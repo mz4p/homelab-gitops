@@ -1,0 +1,14 @@
+ingress:
+  enabled: true
+  annotations: 
+  hosts:
+    - host: homarr.local
+      paths:
+        - path: /
+          pathType: Prefix
+persistence:
+  enabled: true
+  size: 1Gi
+  accessMode: ReadWriteOnce
+env:
+  TZ: "Europe/Warsaw"
