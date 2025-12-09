@@ -19,7 +19,7 @@ spec:
   sources:
     - repoURL: 'https://homarr-labs.github.io/charts'
       chart: homarr
-      targetRevision: 0.13.0
+      targetRevision: 8.4.3
       helm:
         valueFiles:
           - $values/values/homarr/values.yaml
