@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/YOUR_USERNAME/omarchy-ops.git'
+    repoURL: 'https://github.com/mz4p/homelab-gitops.git'
     targetRevision: HEAD
     path: apps
     directory:
