@@ -17,7 +17,7 @@ spec:
       selfHeal: true
 
   sources:
-    - repoURL: 'https://homarr-labs.github.io/helm-charts'
+    - repoURL: 'https://homarr-labs.github.io/charts'
       chart: homarr
       targetRevision: 0.13.0
       helm:
