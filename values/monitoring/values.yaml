@@ -3,6 +3,10 @@ grafana:
     existingSecret: "grafana-admin-credentials"
     userKey: "admin-user"
     passwordKey: "admin-password"
+  env:
+    GF_SECURITY_ALLOW_EMBEDDING: "true"
+    GF_AUTH_ANONYMOUS_ENABLED: "true"
+    GF_AUTH_ANONYMOUS_ORG_ROLE: "Viewer"
   ingress:
     enabled: true
     ingressClassName: nginx
