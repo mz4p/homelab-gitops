@@ -8,8 +8,12 @@ ingress:
         - path: /
           pathType: Prefix
 persistence:
-  enabled: true
-  size: 1Gi
-  accessMode: ReadWriteOnce
+  homarrDatabase:
+    enabled: true
+    name: "homarr-database"
+    storageClassName: "local-path"
+    accessMode: "ReadWriteOnce"
+    size: "1Gi"
+    mountPath: "/appdata"
 env:
   TZ: "Europe/Warsaw"
