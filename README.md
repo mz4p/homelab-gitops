@@ -87,4 +87,4 @@ credentials are wired through `existingSecret: grafana-admin-credentials`.
 - Sealed Secrets or SOPS so more of the stack can live in Git
 - A staging namespace to exercise promotion between overlays
 - Alerting rules routed to a real notification channel
-- A small Go CLI for repetitive cluster tasks (in progress — learning Go)
+- A small Go CLI for repetitive cluster tasks (personal Go learning project)
